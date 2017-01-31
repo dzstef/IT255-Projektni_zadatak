@@ -1,0 +1,139 @@
+<div class="container bg-3">
+	<b><h1 class="margin osnovni-podaci-par">Nekretnine</h1><br></b>
+
+	
+	<div class="col-md-12 visina-kolone ">
+		<!-- Opcije za pretragu-->
+		<div class="col-md-2 visina-kolone">
+			
+			<!-- Povrsina -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Površina 			
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				Od: <input type="text" class="form-control" placeholder="Search" [(ngModel)]="povrsinaOd">	
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				Do: <input type="text" class="form-control" placeholder="Search" [(ngModel)]="povrsinaDo">	
+			</div>
+			
+			<!-- Cena -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Cena				
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				Od: <input type="text" class="form-control" placeholder="Search" [(ngModel)]="cenaOd">	
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				Do: <input type="text" class="form-control" placeholder="Search" [(ngModel)]="cenaDo">	
+			</div>	
+			
+			<!-- Struktura -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Struktura				
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				<select class="selectpicker" [(ngModel)]="struktura">
+				  <option>Garsonjera</option>
+				  <option>Jednosoban</option>
+				  <option>Dvosoban</option>
+				  <option>Trosoban</option>
+				  <option>Cetvorosoban</option>
+				  <option>Petosoban</option>
+			</select>	
+			</div>	
+
+			<!-- Vrsta -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Vrsta				
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				<select class="selectpicker" [(ngModel)]="vrsta">
+				  <option>Starogradnja</option>
+				  <option>Novogradnja</option>				  
+			</select>	
+			</div>	
+
+			<!-- Tip -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Tip				
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				<select class="selectpicker" [(ngModel)]="tip">
+				  <option>Stan </option>
+				  <option>Stan u kuci</option>
+				  <option>Kuca</option>					  
+			</select>	
+			</div>	
+
+			<!-- Namestenost -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Namestenost			
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				<select class="selectpicker" [(ngModel)]="namestenost">
+				  <option>Namesten </option>
+				  <option>Nenamesten</option>				  
+			</select>	
+			</div>	
+			
+			<!--Ukljuci pretragu po infostanu -->
+			<div class="col-md-12 osnovni-podaci-par">
+				Infostan		
+			</div>
+			<div class="col-md-12 osnovni-podaci-nepar">
+				<input type="checkbox" [(ngModel)]="infostan"> 
+				
+			</div>		
+			
+			<div *ngFor="#stan of stanovi">
+				<br> <br> <br>
+				<br> <br> <br>
+				<br> <br> <br>
+				<br> <br> <br>
+			</div>
+		</div>	
+		
+		<div *ngFor="#stan of stanovi | pretragaPovrsinaDo: povrsinaDo | pretragaCenaDo: cenaDo |
+		pretragaPovrsinaOd: povrsinaOd | pretragaCenaOd: cenaOd | pretragaStruktura: struktura |
+		pretragaVrsta: vrsta | pretragaTip: tip | pretragaNamestenost: namestenost | pretragaInfostan: infostan " (click)="send(stan.sid)">	
+			
+			<div class="col-md-3 visina-kolone border-slike">
+				<img [src]="'data:image/jpg;base64,'+stan.slika" width="100%" height="170"/>			
+			</div>
+			<div class="col-md-6 visina-kolone border-slike">
+				<div class="col-md-12 naslov-stana">
+					Izdavanje, stan u kuci, {{stan.grad}}, {{stan.opstina}}
+				</div>
+				<div class="col-md-12 osnovni-podaci-stana">
+					<div class="col-md-4 osnovni-podaci-nepar">
+				
+						Cena: <br> {{stan.cena}} evra
+					</div>
+					<div class="col-md-4 osnovni-podaci-par">
+						Struktura: <br> {{stan.struktura}}
+					</div>
+					<div class="col-md-4 osnovni-podaci-nepar">
+					
+						Kvadratura: <br> {{stan.povrsina}} m2
+					</div>
+					<div class="col-md-4 osnovni-podaci-par">
+						Tip: <br> {{stan.tip}}
+					</div>
+					<div class="col-md-4 osnovni-podaci-nepar">
+						Namestenost: <br> {{stan.namestenost}}
+					</div>
+					<div class="col-md-4 osnovni-podaci-par">
+						Vrsta: <br> {{stan.vrsta}}
+					</div>
+				</div>
+				
+			</div>
+			<div class="col-md-1 visina-kolone border-slike">
+				<p></p>			
+			</div>
+		</div>
+	
+</div>
+
+</div>

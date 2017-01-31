@@ -1,0 +1,32 @@
+
+<div class="container bg-3">
+	<h3 class="margin">Stanovi</h3><br>
+	<div class = "row row-eq-height">
+		<div *ngFor="#stan of stanovi">				
+			<div class="col-md-4" >	
+				<div class="najposecenijiMargina">
+					<div class="col-md-6"  >
+						<b>Cena:</b> {{stan.cena}}
+						<br/>					
+						<b>Struktura:</b> {{stan.struktura}}
+						<br/>						
+					</div>
+					<div class="col-md-6" >
+						<b>Vrsta:</b> {{stan.vrsta}}
+						<br/>
+						<b>Tip:</b> {{stan.tip}}
+						<br/>
+					</div>	
+					<div class="col-md-12">
+						<b>Lokacija:</b> {{stan.grad}}, {{stan.opstina}}
+						<br/>
+					</div>
+					<div class="col-md-12" >
+						<img [src]="'data:image/jpg;base64,'+stan.slika" width="100%" height="200"/>		
+						<br/>
+					</div>	
+				</div>				
+			</div>					
+		</div>
+	</div>
+</div>

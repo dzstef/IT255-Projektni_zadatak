@@ -1,0 +1,164 @@
+
+<div *ngFor="#stan of stanovi">
+<h1> Izdavanje, {{stan.struktura}}, {{stan.grad}}, {{stan.opstina}}, {{stan.cena}} </h1>
+<br>
+	<div class="col-md-12 osnovni-podaci-nepar">
+
+	<div *ngIf="edited"  >
+			<div class="col-md-6">
+				<h1 class="osnovni-podaci-par">Osnovni podaci</h1>
+				<div class="col-md-5">
+					<b>Vrsta nekretnine: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.vrsta}}
+				</div>
+				<div class="col-md-5">
+					<b>Struktura: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.struktura}}
+				</div>
+				<div class="col-md-5">
+					<b>Namestenost: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.namestenost}}
+				</div>
+				<div class="col-md-5">
+					<b>Povrsina: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.povrsina}}
+				</div>
+				<div class="col-md-5">
+					<b>Cena: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.cena}}
+				</div>
+			</div>
+			<div class="col-md-6">
+			<h1 class="osnovni-podaci-par">Lokacija</h1>
+				<div class="col-md-5">
+					<b>Grad: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.grad}}
+				</div>
+				<div class="col-md-5">
+					<b>Opstina: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.opstina}}
+				</div>				
+				<div class="col-md-5">
+					<b>Sprat: </b>
+				</div>
+				<div class="col-md-7">
+					{{stan.sprat}}
+				</div>
+			</div>
+	</div>
+	<div *ngIf="podaci2">
+			<div class="col-md-6">	
+<h1 class="osnovni-podaci-par">Troskovi</h1>			
+				<div class="col-md-5">
+					<b>Infostan: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.infostan}}
+				</div>
+				<div class="col-md-5">
+					<b>Grejanje: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.grejanje}}
+				</div>
+				<div class="col-md-5">
+					<b>Internet: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.internet}}
+				</div>
+				<div class="col-md-5">
+					<b>Kablovska: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.kablovska}}
+				</div>
+				<div class="col-md-5">
+					<b>Telefon: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.telefon}}
+				</div>
+				<div class="col-md-5">
+					<b>Struja: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.struja}}
+				</div>
+			</div>
+			<div class="col-md-6">
+			<h1 class="osnovni-podaci-par">Opremljenost</h1>
+				<div class="col-md-5">
+					<b>Klima: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.klima}}
+				</div>
+				<div class="col-md-5">
+					<b>Zamrzivac: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.zamrzivac}}
+				</div>
+				<div class="col-md-5">
+					<b>Ves masina: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.ves_masina}}
+				</div>
+				<div class="col-md-5">
+					<b>Sporet: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.sporet}}
+				</div>
+				<div class="col-md-5">
+					<b>Ormar: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.ormar}}
+				</div>
+				<div class="col-md-5">
+					<b>Frizider: </b>
+				</div>
+				<div class="col-md-7">					
+					{{stan.frizider}}
+				</div>
+			</div>
+	</div>
+
+	</div>
+	<div class="col-md-6 osnovni-podaci-par">
+	<button (click)="prikaziP1()" width="100%">Osnovni podaci o stanu</button>
+	</div>
+
+	<div class="col-md-6 osnovni-podaci-par">
+	<button (click)="prikaziP2()">Troskovi i opremljenost stana</button>
+	</div>
+
+</div>
+<br>
+<h2> Galerija slika: </h2>
+<br>
+<div *ngFor="#slika of slike">
+	<div class="col-md-4">
+			<div class="item">
+				<img [src]="'data:image/jpg;base64,'+slika.slika" width="100%" height="300px"/>		
+					
+			</div>   
+	</div>
+		</div>

@@ -1,0 +1,137 @@
+<form role="form" [ngFormModel]="registerForm">
+ <div class="form-group">
+    <label for="cena">Cena:</label>
+    <input type="text" class="form-control" ngControl='cena'>
+  </div>
+   <div class="form-group">
+    <label for="namestenost">Namestenost:</label>
+	<select #selectOption (change)='select=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="1" >Da</option>
+		<option value="0" >Ne</option>
+	</select>
+  </div>
+  <div class="form-group">
+    <label for="struktura">Struktura:</label>
+	<select #selectOption (change)='selectStruktura=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Garsonjera</option>
+		<option value="1" >Jednosoban</option>
+		<option value="2" >Dvosoban</option>
+		<option value="3" >Trosoban</option>
+		<option value="4" >Cetvorosoban</option>	
+		<option value="5" >Petosoban</option>	
+		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="tip">Tip:</label>
+	<select #selectOption (change)='selectTip=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Stan</option>
+		<option value="1" >Stan u kuci</option>
+		<option value="2" >Kuca</option>
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="vrsta">Vrsta:</label>
+	<select #selectOption (change)='selectVrsta=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Starogradnja</option>
+		<option value="1" >Novogradnja</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="frizider">Frizider:</label>
+	<select #selectOption (change)='selectFrizider=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="zamrzivac">Zamrzivac:</label>
+	<select #selectOption (change)='selectZamrzivac=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="klima">Klima:</label>
+	<select #selectOption (change)='selectKlima=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="sporet">Sporet:</label>
+	<select #selectOption (change)='selectSporet=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="masina">Ves masina:</label>
+	<select #selectOption (change)='selectMasina=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+  <div class="form-group">
+    <label for="ormar">Ormar:</label>
+	<select #selectOption (change)='selectOrmar=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="0" >Ne</option>
+		<option value="1" >Da</option>		
+	</select>
+  </div>
+  
+   <div class="form-group">
+    <label for="infostan">Infostan:</label>
+    <input type="text" class="form-control" ngControl='infostan'>
+  </div>
+  
+   <div class="form-group">
+    <label for="grejanje">Grejanje:</label>
+    <input type="text" class="form-control" ngControl='grejanje'>
+  </div>
+  
+   <div class="form-group">
+    <label for="internet">Internet:</label>
+    <input type="text" class="form-control" ngControl='internet'>
+  </div>
+  
+  <div class="form-group">
+    <label for="kablovska">Kablovska:</label>
+    <input type="text" class="form-control" ngControl='kablovska'>
+  </div>
+  
+  <div class="form-group">
+    <label for="telefon">Telefon:</label>
+    <input type="text" class="form-control" ngControl='telefon'>
+  </div>
+  
+  <div class="form-group">
+    <label for="struja">Struja:</label>
+    <input type="text" class="form-control" ngControl='struja'>
+  </div>
+  
+   <div class="form-group">
+    <label for="lokacija">Lokacija:</label>
+	<select #selectOption (change)='selectLokacija=selectOption.value' class="form-control" ng-selected="Yes" >
+		<option value="1" >Beograd - Novi Beograd</option>
+		<option value="2" >Beograd - Vracar</option>		
+	</select>
+  </div>
+  
+   <div class="form-group">
+	<label class="btn btn-default btn-file">
+	Brovse <input type="file" class="form-control" ngControl='slika'> </label>
+    
+  </div>
+  
+ 
+  <button (click)="dodaj()" class="btn btn-default">Dodaj</button>
+</form>
